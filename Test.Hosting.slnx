@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Build/" Id="02ea681e-c7d8-13c7-8484-4ac65e1b71e8">
+    <File Path=".github/workflows/dotnet.yml" />
+    <File Path="README.md" />
+    <File Path="src/Directory.Build.props" />
+  </Folder>
+  <Project Path="src/Test.Hosting/Test.Hosting.csproj" Id="3ff17fc0-2a44-40c7-8c00-f4466367e7ec" />
+  <Project Path="test/Test.Hosting.Tests/Test.Hosting.Tests.csproj" Id="b34938e1-de35-4c89-8cd2-5820e15cd9b9" />
+</Solution>
