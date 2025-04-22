@@ -1,9 +1,9 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-using Test.Hosting.Logging;
+using TestHost.Abstracts.Logging;
 
-namespace Test.Hosting;
+namespace TestHost.Abstracts;
 
 /// <summary>
 /// XUnit collection fixture that supports <see cref="HostApplicationBuilder"/>

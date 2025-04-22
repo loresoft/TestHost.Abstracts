@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Test.Hosting.Logging;
+namespace TestHost.Abstracts.Logging;
 
 /// <summary>
 /// A memory logging provider

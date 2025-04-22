@@ -1,4 +1,4 @@
-namespace Test.Hosting.Tests;
+namespace TestHost.Abstracts.Tests;
 
 public interface IService
 {

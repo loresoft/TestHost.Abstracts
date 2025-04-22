@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Test.Hosting\Test.Hosting.csproj" />
+    <ProjectReference Include="..\..\src\Test.Hosting\TestHost.Abstracts.csproj" />
   </ItemGroup>
 
 </Project>

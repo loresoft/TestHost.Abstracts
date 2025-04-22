@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 
-namespace Test.Hosting.Logging;
+namespace TestHost.Abstracts.Logging;
 
 /// <summary>
 /// Memory logger settings

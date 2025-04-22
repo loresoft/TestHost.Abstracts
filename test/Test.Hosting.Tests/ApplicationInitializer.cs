@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Test.Hosting.Tests;
+namespace TestHost.Abstracts.Tests;
 
 public class ApplicationInitializer(ILogger<ApplicationInitializer> logger) : IHostedService
 {

@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 using Microsoft.Extensions.Logging;
 
-namespace Test.Hosting.Logging;
+namespace TestHost.Abstracts.Logging;
 
 /// <summary>
 /// A memory logger

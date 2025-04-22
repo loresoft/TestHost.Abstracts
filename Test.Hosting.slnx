@@ -4,6 +4,6 @@
     <File Path="README.md" />
     <File Path="src/Directory.Build.props" />
   </Folder>
-  <Project Path="src/Test.Hosting/Test.Hosting.csproj" Id="3ff17fc0-2a44-40c7-8c00-f4466367e7ec" />
-  <Project Path="test/Test.Hosting.Tests/Test.Hosting.Tests.csproj" Id="b34938e1-de35-4c89-8cd2-5820e15cd9b9" />
+  <Project Path="src/Test.Hosting/TestHost.Abstracts.csproj" Id="3ff17fc0-2a44-40c7-8c00-f4466367e7ec" />
+  <Project Path="test/Test.Hosting.Tests/TestHost.Abstracts.Tests.csproj" Id="b34938e1-de35-4c89-8cd2-5820e15cd9b9" />
 </Solution>

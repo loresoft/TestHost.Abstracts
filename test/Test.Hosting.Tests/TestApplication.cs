@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Test.Hosting.Tests;
+namespace TestHost.Abstracts.Tests;
 
 public class TestApplication : TestHostApplication
 {

@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using Test.Hosting.Logging;
+using TestHost.Abstracts.Logging;
 
-namespace Test.Hosting.Tests;
+namespace TestHost.Abstracts.Tests;
 
 public class TestHostApplicationTests
 {

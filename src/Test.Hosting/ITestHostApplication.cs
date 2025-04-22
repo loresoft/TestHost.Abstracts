@@ -1,7 +1,7 @@
 
 using Microsoft.Extensions.Hosting;
 
-namespace Test.Hosting;
+namespace TestHost.Abstracts;
 
 /// <summary>
 /// An interface for a test host application.

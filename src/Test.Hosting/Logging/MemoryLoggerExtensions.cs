@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 
-namespace Test.Hosting.Logging;
+namespace TestHost.Abstracts.Logging;
 
 /// <summary>
 /// Extension methods for the <see cref="ILoggerFactory"/> class.

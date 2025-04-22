@@ -7,12 +7,12 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>test;host</PackageTags>
-    <PackageProjectUrl>https://github.com/loresoft/Test.Hosting</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/loresoft/TestHost.Abstracts</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/loresoft/Test.Hosting</RepositoryUrl>
+    <RepositoryUrl>https://github.com/loresoft/TestHost.Abstracts</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 

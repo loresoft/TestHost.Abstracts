@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 
-namespace Test.Hosting.Tests;
+namespace TestHost.Abstracts.Tests;
 
 public class Service : IService
 {
