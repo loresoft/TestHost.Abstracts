@@ -20,27 +20,10 @@ public class MemoryLoggerProvider : ILoggerProvider, ISupportExternalScope
     /// <summary>
     /// Initializes a new instance of the <see cref="MemoryLoggerProvider"/> class.
     /// </summary>
-    public MemoryLoggerProvider()
-        : this(settings: null)
-    {
-    }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MemoryLoggerProvider"/> class.
-    /// </summary>
-    /// <param name="settings">The <see cref="MemoryLoggerSettings"/>.</param>
-    public MemoryLoggerProvider(MemoryLoggerSettings? settings)
-    {
-        _settings = settings ?? new MemoryLoggerSettings();
-    }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MemoryLoggerProvider"/> class.
-    /// </summary>
     /// <param name="options">The <see cref="IOptions{MemoryLoggerSettings}"/>.</param>
     public MemoryLoggerProvider(IOptions<MemoryLoggerSettings> options)
-        : this(options.Value)
     {
+        _settings = options.Value ?? new MemoryLoggerSettings();
     }
 
     /// <inheritdoc />
@@ -72,6 +55,8 @@ public class MemoryLoggerProvider : ILoggerProvider, ISupportExternalScope
     public void Dispose()
     {
         Clear();
+
+        GC.SuppressFinalize(this);
     }
 
 
@@ -91,7 +76,9 @@ public class MemoryLoggerProvider : ILoggerProvider, ISupportExternalScope
 
         // ensure capacity
         while (_logEntries.Count > _settings.Capacity)
+        {
             if (!_logEntries.TryDequeue(out _))
                 break;
+        }
     }
 }

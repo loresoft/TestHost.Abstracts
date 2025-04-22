@@ -4,9 +4,9 @@ using Microsoft.Extensions.Hosting;
 namespace TestHost.Abstracts;
 
 /// <summary>
-/// An interface for a test host application.
+/// An interface for a hosting a test application.
 /// </summary>
-public interface ITestHostApplication
+public interface ITestHostApplication : IAsyncDisposable
 {
     /// <summary>
     /// Gets the host for the tests.

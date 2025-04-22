@@ -6,19 +6,17 @@ using TestHost.Abstracts.Logging;
 namespace TestHost.Abstracts;
 
 /// <summary>
-/// XUnit collection fixture that supports <see cref="HostApplicationBuilder"/>
+/// A base class for hosting a test application.
 /// </summary>
 public abstract class TestHostApplication : ITestHostApplication
 {
-    private readonly Lazy<IHost> _host;
+#if NET9_0_OR_GREATER
+    private readonly Lock _lockObject = new();
+#else
+    private readonly object _lockObject = new();
+#endif
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TestHostApplication"/> class.
-    /// </summary>
-    protected TestHostApplication()
-    {
-        _host = new Lazy<IHost>(CreateHost);
-    }
+    private IHost? _host;
 
     /// <summary>
     /// Gets the host for this test.
@@ -26,7 +24,19 @@ public abstract class TestHostApplication : ITestHostApplication
     /// <value>
     /// The host for this test.
     /// </value>
-    public IHost Host => _host.Value;
+    public IHost Host
+    {
+        get
+        {
+            if (_host != null)
+                return _host;
+
+            lock (_lockObject)
+                _host ??= CreateHost();
+
+            return _host;
+        }
+    }
 
     /// <summary>
     /// Gets the services configured for this test
@@ -72,5 +82,18 @@ public abstract class TestHostApplication : ITestHostApplication
     {
         builder.Logging.SetMinimumLevel(LogLevel.Debug);
         builder.Logging.AddMemoryLogger();
+    }
+
+    public virtual async ValueTask DisposeAsync()
+    {
+        if (_host == null)
+            return;
+
+        await _host.StopAsync();
+
+        _host.Dispose();
+        _host = null;
+
+        GC.SuppressFinalize(this);
     }
 }
