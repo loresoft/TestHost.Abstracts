@@ -4,7 +4,7 @@ using TestHost.Abstracts.Logging;
 
 namespace TestHost.Abstracts.Tests;
 
-public class TestHostApplicationTests
+public class HostTests
 {
     [ClassDataSource<TestApplication>(Shared = SharedType.PerAssembly)]
     public required TestApplication Application { get; init; }
@@ -18,12 +18,12 @@ public class TestHostApplicationTests
         service.Run();
 
         await Assert.That(Service.IsRun).IsTrue();
-        await Assert.That(ApplicationInitializer.IsStarted).IsTrue();
+        await Assert.That(DatabaseInitialize.IsStarted).IsTrue();
 
         var memoryLogger = Application.Services.GetService<MemoryLoggerProvider>();
         await Assert.That(memoryLogger).IsNotNull();
 
-        var logs = memoryLogger?.GetEntries().ToList();
+        var logs = memoryLogger?.Logs();
         await Assert.That(logs).IsNotEmpty();
 
         await Assert.That(logs).Contains(match => match.Message.Contains("Service Run()"));

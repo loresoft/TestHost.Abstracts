@@ -84,6 +84,10 @@ public abstract class TestHostApplication : ITestHostApplication
         builder.Logging.AddMemoryLogger();
     }
 
+    /// <summary>
+    /// Disposes the resources used by the test host application.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous dispose operation.</returns>
     public virtual async ValueTask DisposeAsync()
     {
         if (_host == null)
